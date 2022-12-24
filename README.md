@@ -1,4 +1,4 @@
-Additional Features: \
+Additional features: \
 Date and color edit properties for tasks. Data stored in localstorage.\
 Scrollable lists, button to add additional lists. \
 Options: Sort list(created, due date, alphabetical), copy list, clear tasks, delete List.
