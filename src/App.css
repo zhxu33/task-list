@@ -13,7 +13,7 @@ body {
     rgba(48, 16, 255, 1) 0%,
     rgba1(00, 115, 255, 1) 100%
   ); */
-  background-color: rgb(48, 16, 255);
+  background-color: rgb(160, 155, 196);
   overflow-y: hidden;
 }
 
@@ -30,8 +30,8 @@ body {
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(
     90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
+    rgba(93, 12, 255, 0.466) 0%,
+    rgba(154, 0, 250, 0.448) 100%
   );
   border-radius: 4px;
 }
@@ -47,8 +47,8 @@ body {
 .add-button {
   background: linear-gradient(
     90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
+    rgba(93, 12, 255, 0.873) 0%,
+    rgba(154, 0, 250, 0.805) 100%
   );
   margin-top: 275px;
   margin-left: -180px;
