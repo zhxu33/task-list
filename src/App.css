@@ -1,38 +1,364 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  /*
+  background: linear-gradient(
+    90deg,
+    rgba(48, 16, 255, 1) 0%,
+    rgba1(00, 115, 255, 1) 100%
+  ); */
+  background-color: rgb(48, 16, 255);
+  overflow-y: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #161a2b32;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  border-radius: 4px;
+}
+
+.app {
+  display: inline-flex;
+  flex-direction: row;
+  column-gap: 250px;
+  margin-left: 150px;
+  margin-right: 70px;
+}
+
+.add-button {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+  margin-top: 275px;
+  margin-left: -180px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo-app {
   display: flex;
   flex-direction: column;
+  width: 520px;
+  height: 550px;
+  background: #161a2b;
+  text-align: center;
+  margin: 5px 0px;
+  border-radius: 10px;
+  padding: 0px;
+}
+
+.todo-tasks {
+  height: 355px; 
+  width: 500px;
+  margin: auto;
+  padding: 0px;
+  overflow: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+
+.todo-tasks::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 0.873) 0%,
+    rgba(154, 0, 250, 0.805) 100%
+  );
+}
+
+.list-name {
+  margin: 32px 0;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.list-name-confirm {
+  margin-left: -5px;
+  padding: 16px;
+  width: 85px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.list-name-edit {
+  margin-top: 22.5px;
+  margin-bottom: 22.5px;
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: #fff;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.todo-form {
+  margin-bottom: 25px;
+}
+
+.todo-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: #fff;
+}
+
+.todo-input::placeholder {
+  color: #e2e2e2;
+}
+
+.todo-date {
+  margin-top: 2px;
+  border-radius: 4px;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 50px;
+  height: 45px;
+  background: transparent;
+  color: #fff;
+  color-scheme: dark;
+}
+
+.todo-color {
+  padding: 5px;
+  margin-top: 2px;
+  border-radius: 4px;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 50px;
+  height: 45px;
+  background: transparent;
+  color: #fff;
+  color-scheme: dark;
+}
+
+.todo-date::placeholder {
+  color: #e2e2e2;
+}
+
+.todo-date.edit {
+  width: 407px;
+  border: 2px solid #149fff;
+}
+
+.todo-color::placeholder {
+  color: #e2e2e2;
+}
+
+.todo-color.edit {
+  width: 407px;
+  border: 2px solid #149fff;
+}
+
+.todo-button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo-input.edit {
+  border: 2px solid #149fff;
+}
+
+.todo-button.edit {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+  padding: 16px 22px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.todo-row {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgb(157, 78, 206) 100%
+  );
+  padding: 16px;
+  border-radius: 5px;
+  width: 95%;
+  height: 15.75%;
 }
 
-.App-link {
-  color: #61dafb;
+/*
+.todo-row:nth-child(4n + 1) {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-row:nth-child(4n + 2) {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 12, 241, 1) 0%,
+    rgba(250, 0, 135, 1) 100%
+  );
+} 
+
+.todo-row:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+} */
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.edit-icon {
+  color: #fff;
+}
+
+.complete-button {
+  text-align: left;
+  width: 350px;
+  cursor: pointer;
+  margin-top: -15px;
+}
+
+.date-display {
+  margin-top: 20px;
+  margin-left: -635.5px;
+  font-size: 10px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 225px;
+  min-height: 100px;
+  background: #161a2b;
+  text-align: center;
+  margin-left: 520px;
+  margin-top: -92.5px;
+  border-radius: 10px;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+.option {
+  margin-top: 10px;
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.sort {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+}
+
+.copy {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+}
+
+.clear,.delete {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+}
+
+.options-button {
+  width: 100px;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  position: absolute;
+  margin-top: -90px;
+  margin-left: 158px;
 }
